@@ -1,0 +1,20 @@
+server:
+  port: 1111
+#here the application name should be the same as the application in github 
+#if this application name not matches then @value("${message}) throws the exception as below
+#Could not resolve placeholder 'message' in value "${message}"  
+spring:
+  application:
+    name: cloudconfig
+    
+
+      
+  config:
+     import:
+        optional:configserver:http://localhost:9090/      
+   
+      
+  profiles:
+    active: dev
+    
+    
